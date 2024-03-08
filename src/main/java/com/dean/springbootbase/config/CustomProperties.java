@@ -1,15 +1,17 @@
-package com.dean.springbootbase.properties;
+package com.dean.springbootbase.config;
 
+import lombok.Getter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.ConstructorBinding;
 import org.springframework.boot.context.properties.bind.DefaultValue;
 import org.springframework.boot.context.properties.bind.Name;
 import org.springframework.boot.convert.DurationUnit;
+import org.springframework.context.annotation.Configuration;
 
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 
-@ConstructorBinding
+@ConstructorBinding // 상수처럼 final을 써서 사용하도록 만들어준다. 이것을 사용하지 않으면, final을 없애고 set을 사용해야한다.
 @ConfigurationProperties("iam")
 public class CustomProperties {
 
@@ -25,5 +27,4 @@ public class CustomProperties {
     public Duration getDuration() {
         return duration;
     }
-
 }

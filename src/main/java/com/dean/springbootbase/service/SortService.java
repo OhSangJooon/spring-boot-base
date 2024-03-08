@@ -1,7 +1,6 @@
 package com.dean.springbootbase.service;
-
 import com.dean.springbootbase.logic.Sort;
-import com.dean.springbootbase.properties.CustomProperties;
+import com.dean.springbootbase.config.CustomProperties;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
