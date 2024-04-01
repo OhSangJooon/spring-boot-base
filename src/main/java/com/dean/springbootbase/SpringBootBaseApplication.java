@@ -32,7 +32,10 @@ public class SpringBootBaseApplication {
     public void init() {
 //        System.out.println("myProperties : " + myProperties.getHeight());
         studentService.printStudent("jack");
+        studentService.printStudent("jack");
+        studentService.printStudent("jack");
         studentService.printStudent("fred");
+        studentService.printStudent("cassie");
         studentService.printStudent("cassie");
     }
 

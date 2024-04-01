@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
+@NoArgsConstructor
 @AllArgsConstructor(staticName = "of")
 @Data
 public class Student implements Serializable {

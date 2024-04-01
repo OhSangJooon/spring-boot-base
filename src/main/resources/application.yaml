@@ -2,3 +2,6 @@ my:
   height: 175
 iam:
   duration: 5s
+spring:
+  main:
+    web-application-type: none
