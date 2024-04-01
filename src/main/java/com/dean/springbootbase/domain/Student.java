@@ -1,19 +1,19 @@
 package com.dean.springbootbase.domain;
 
-/* Record 타입 사용 */
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-public record Student(
-        String name,
-        Integer age,
-        Grade grade
-) {
-    public static Student of(String name, Integer age, Grade grade) {
-        return new Student(name, age, grade);
-    }
-    private enum Grade {
-        A,B,C,D,F
+import java.io.Serializable;
+
+@AllArgsConstructor(staticName = "of")
+@Data
+public class Student implements Serializable {
+    private String name;
+    private Integer age;
+    private Grade grade;
+
+    public enum Grade {
+        A, B, C, D, F
     }
 }
-
-
-

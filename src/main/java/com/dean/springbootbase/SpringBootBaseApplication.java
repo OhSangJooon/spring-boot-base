@@ -1,10 +1,14 @@
 package com.dean.springbootbase;
 
 import com.dean.springbootbase.config.MyProperties;
+import com.dean.springbootbase.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.event.EventListener;
 
 import javax.annotation.PostConstruct;
 
@@ -18,14 +22,18 @@ import javax.annotation.PostConstruct;
 public class SpringBootBaseApplication {
 
     private final MyProperties myProperties;
+    private final StudentService studentService;
 
     public static void main(String[] args) {
         SpringApplication.run(SpringBootBaseApplication.class, args);
     }
 
-    @PostConstruct
+    @EventListener(ApplicationReadyEvent.class)
     public void init() {
-        System.out.println("myProperties : " + myProperties.getHeight());
+//        System.out.println("myProperties : " + myProperties.getHeight());
+        studentService.printStudent("jack");
+        studentService.printStudent("fred");
+        studentService.printStudent("cassie");
     }
 
 }
