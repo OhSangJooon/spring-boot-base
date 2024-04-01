@@ -1,12 +1,14 @@
 package com.dean.springbootbase;
 
 import com.dean.springbootbase.config.MyProperties;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 
 import javax.annotation.PostConstruct;
 
+@RequiredArgsConstructor
 @ConfigurationPropertiesScan
 @SpringBootApplication(
 //        exclude = {WebMvcAutoConfiguration.class} // AutoConfiguration을 키고 끌수있다.
@@ -16,10 +18,6 @@ import javax.annotation.PostConstruct;
 public class SpringBootBaseApplication {
 
     private final MyProperties myProperties;
-
-    public SpringBootBaseApplication(MyProperties myProperties) {
-        this.myProperties = myProperties;
-    }
 
     public static void main(String[] args) {
         SpringApplication.run(SpringBootBaseApplication.class, args);
