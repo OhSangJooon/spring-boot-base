@@ -8,7 +8,7 @@ import org.springframework.boot.context.properties.ConstructorBinding;
 @ConstructorBinding
 @ConfigurationProperties("my")
 public class MyProperties {
-    /* 제 키에요 */
+    /* 제 키에요!! */
     private final Integer height;
 
     public MyProperties(Integer height) {
