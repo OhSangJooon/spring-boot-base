@@ -3,5 +3,5 @@ my:
 iam:
   duration: 5s
 spring:
-  main:
-    web-application-type: none
+  profiles:
+    active: test
