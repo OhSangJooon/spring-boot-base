@@ -5,3 +5,8 @@ iam:
 spring:
   profiles:
     active: test
+  cloud:
+    config:
+      server:
+        git:
+          uri: "https://github.com/OhSangJooon/spring-boot-base"

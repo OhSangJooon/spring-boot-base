@@ -8,10 +8,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.context.event.EventListener;
 
 import javax.annotation.PostConstruct;
 
+@EnableConfigServer
 @RequiredArgsConstructor
 @ConfigurationPropertiesScan
 @SpringBootApplication(
@@ -30,7 +32,7 @@ public class SpringBootBaseApplication {
 
     @EventListener(ApplicationReadyEvent.class)
     public void init() {
-//        System.out.println("myProperties : " + myProperties.getHeight());
+        System.out.println("내 키는: " + myProperties.getHeight());
         studentService.printStudent("jack");
         studentService.printStudent("jack");
         studentService.printStudent("jack");
